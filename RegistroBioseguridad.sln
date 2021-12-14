@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistroBioseguridad", "RegistroBioseguridad.csproj", "{102C6877-DFF3-4A39-9F0E-6DC449EC75E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{102C6877-DFF3-4A39-9F0E-6DC449EC75E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102C6877-DFF3-4A39-9F0E-6DC449EC75E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102C6877-DFF3-4A39-9F0E-6DC449EC75E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102C6877-DFF3-4A39-9F0E-6DC449EC75E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3AE2E07C-42FA-44A2-BCCD-C309AD8F67C6}
+	EndGlobalSection
+EndGlobal

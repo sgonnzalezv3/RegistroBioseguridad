@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarVisitante">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultarVisitanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarVisitanteResult" type="tns:Visitante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Visitante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Identificacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoIngreso" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Organizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaIngreso" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MostrarRegistrosActuales">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarRegistrosActualesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarRegistrosActualesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarVisitante_Filtro_Identificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="identificacion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarVisitante_Filtro_IdentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarVisitante_Filtro_IdentificacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarVisitanteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarVisitante" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarVisitanteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarVisitanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarRegistrosActualesSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarRegistrosActuales" />
+  </wsdl:message>
+  <wsdl:message name="MostrarRegistrosActualesSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarRegistrosActualesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarVisitante_Filtro_IdentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarVisitante_Filtro_Identificacion" />
+  </wsdl:message>
+  <wsdl:message name="MostrarVisitante_Filtro_IdentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarVisitante_Filtro_IdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CrudBioseguridad1Soap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVisitante">
+      <wsdl:input message="tns:ConsultarVisitanteSoapIn" />
+      <wsdl:output message="tns:ConsultarVisitanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarRegistrosActuales">
+      <wsdl:input message="tns:MostrarRegistrosActualesSoapIn" />
+      <wsdl:output message="tns:MostrarRegistrosActualesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisitante_Filtro_Identificacion">
+      <wsdl:input message="tns:MostrarVisitante_Filtro_IdentificacionSoapIn" />
+      <wsdl:output message="tns:MostrarVisitante_Filtro_IdentificacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrudBioseguridad1Soap" type="tns:CrudBioseguridad1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVisitante">
+      <soap:operation soapAction="http://tempuri.org/ConsultarVisitante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarRegistrosActuales">
+      <soap:operation soapAction="http://tempuri.org/MostrarRegistrosActuales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisitante_Filtro_Identificacion">
+      <soap:operation soapAction="http://tempuri.org/MostrarVisitante_Filtro_Identificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CrudBioseguridad1Soap12" type="tns:CrudBioseguridad1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVisitante">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarVisitante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarRegistrosActuales">
+      <soap12:operation soapAction="http://tempuri.org/MostrarRegistrosActuales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarVisitante_Filtro_Identificacion">
+      <soap12:operation soapAction="http://tempuri.org/MostrarVisitante_Filtro_Identificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrudBioseguridad1">
+    <wsdl:port name="CrudBioseguridad1Soap" binding="tns:CrudBioseguridad1Soap">
+      <soap:address location="https://localhost:44306/CrudBioseguridad1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CrudBioseguridad1Soap12" binding="tns:CrudBioseguridad1Soap12">
+      <soap12:address location="https://localhost:44306/CrudBioseguridad1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
